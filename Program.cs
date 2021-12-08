@@ -72,17 +72,42 @@ namespace setul1
 
         public static void Problema2()
         {
-            
+            Console.WriteLine("Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive.");
+            int n = int.Parse(Console.ReadLine());
+            int pozitive = 0;
+            int negative = 0;
+            int zero = 0;
+            while (n > 0)
+            {
+                int numar = int.Parse(Console.ReadLine());
+                if (numar > 0)
+                    pozitive++;
+                else if (numar < 0)
+                    negative++;
+                else zero++;
+                n--;
+            }
+            Console.WriteLine($"In secventa sunt {negative} numere negative,{zero} numere egale cu 0 si {pozitive} numere pozitive");
         }
 
         public static void Problema3()
         {
-            
+            Console.WriteLine("Calculati suma si produsul numerelor de la 1 la n.");
+            int n = int.Parse(Console.ReadLine());
+            int suma = 0;
+            int prod = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                suma += i;
+                prod *= i;
+            }
+            Console.WriteLine($"Suma si produsul numerelor de la 1 la {n} sunt egale cu {suma}, respectiv {prod}.");
         }
 
         public static void Problema4()
         {
-            
+            Console.WriteLine("Se da o secventa de n numere. Determinati pe ce pozitie se afla in secventa un numara a. Se considera ca primul element din secventa este pe pozitia zero. Daca numarul nu se afla in secventa raspunsul va fi -1.");
+            int n = int.Parse(Console.ReadLine());
         }
 
         public static void Problema5()
