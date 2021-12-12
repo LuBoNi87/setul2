@@ -184,12 +184,28 @@ namespace setul1
             Console.WriteLine("Determianti al n-lea numar din sirul lui Fibonacci. Sirul lui Fibonacci se construieste astfel: f1 = 0, f2 = 1, f_n = f_(n-1) + f(n-2). Exemplu: 0, 1, 1, 2, 3, 5, 8 ...");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Al {n}-lea termen din sirul lui fibonacci este {Fibonacci(n)}");
+        }
 
+        public static int Fibonacci(int n)
+        {
+            switch (n)
+            {
+                case 1:
+                    return 0;
+                case 2:
+                    return 1;
+                default:
+                    return Fibonacci(n - 1) + Fibonacci(n - 2);
+            }
         }
 
         public static void Problema9()
         {
-            
+            Console.WriteLine("Sa se determine daca o secventa de n numere este monotona. Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
+
         }
 
         public static void Problema10()
