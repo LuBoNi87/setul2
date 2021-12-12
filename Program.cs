@@ -58,6 +58,7 @@ namespace setul1
         public static void Problema1()
         {
             Console.WriteLine("Se da o secventa de n numere. Sa se determine cate din ele sunt pare.");
+            Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
             int count = 0;
             while(n > 0)
@@ -73,6 +74,7 @@ namespace setul1
         public static void Problema2()
         {
             Console.WriteLine("Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive.");
+            Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
             int pozitive = 0;
             int negative = 0;
@@ -93,6 +95,7 @@ namespace setul1
         public static void Problema3()
         {
             Console.WriteLine("Calculati suma si produsul numerelor de la 1 la n.");
+            Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
             int suma = 0;
             int prod = 1;
@@ -107,17 +110,41 @@ namespace setul1
         public static void Problema4()
         {
             Console.WriteLine("Se da o secventa de n numere. Determinati pe ce pozitie se afla in secventa un numara a. Se considera ca primul element din secventa este pe pozitia zero. Daca numarul nu se afla in secventa raspunsul va fi -1.");
+            Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
+            Console.Write("a:");
+            int a = int.Parse(Console.ReadLine());
+            int pos = -1;
+            for (int i = 0; i < n; i++)
+            {
+                if (int.Parse(Console.ReadLine()) == a)
+                    pos = i;
+            }
+            if(pos == -1)
+                Console.WriteLine($"Numarul {a} nu se afla in aceasta secventa");
+            Console.WriteLine($"Numarul {a} se afla pe pozitia {pos}");
         }
 
         public static void Problema5()
         {
-            
+            Console.WriteLine("Cate elemente dintr-o secventa de n numere sunt egale cu pozitia pe care apar in secventa. Se considera ca primul element din secventa este pe pozitia 0.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
+            int nr = 0;
+            for (int i = 0; i < n; i++)
+            {
+                int x = int.Parse(Console.ReadLine());
+                if(x==i)
+                    nr++;
+            }
+            Console.WriteLine($"Numarul de elemente egale cu pozitia pe care se afla este {nr}");
         }
 
         public static void Problema6()
         {
-            
+            Console.WriteLine("Se da o secventa de n numere. Sa se determine daca numerele din secventa sunt in ordine crescatoare.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
         }
 
         public static void Problema7()
