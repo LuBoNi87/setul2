@@ -10,7 +10,8 @@ namespace setul1
     {
         public static void Main()
         {
-            Console.SetWindowSize(Console.LargestWindowWidth-10, Console.LargestWindowHeight-20);
+            Console.SetWindowPosition(0, 0);
+            Console.SetWindowSize(Console.LargestWindowWidth-40, Console.LargestWindowHeight-20);
             Console.WriteLine(@"1.  Se da o secventa de n numere. Sa se determine cate din ele sunt pare. 
 2.  Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive.
 3.  Calculati suma si produsul numerelor de la 1 la n. 
@@ -145,11 +146,26 @@ namespace setul1
             Console.WriteLine("Se da o secventa de n numere. Sa se determine daca numerele din secventa sunt in ordine crescatoare.");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
+            bool ascending = true;
+            int a = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n-1; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                if(b<a)
+                    ascending = false;
+                a = b;
+            }
+            if(ascending)
+                Console.WriteLine("Numerele din secventa sunt in ordine crescatoare");
+            else
+                Console.WriteLine("Numerele din secventa nu sunt in ordine crescatoare");
         }
 
         public static void Problema7()
         {
-            
+            Console.WriteLine("Se da o secventa de n numere. Sa se determine cea mai mare si cea mai mica valoare din secventa.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
         }
 
         public static void Problema8()
