@@ -255,17 +255,59 @@ namespace setul1
 
         public static void Problema11()
         {
-            
+            Console.WriteLine("Se da o secventa de n numere. Se cere sa se caculeze suma inverselor acestor numere.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
+            int sum = 0;
+            for (int i = 0; i < n; i++)
+            {
+                int x = int.Parse(Console.ReadLine());
+                sum += invers(x);
+            }
+            Console.WriteLine($"Suma inverselor este {sum}");
+        }
+
+        private static int invers(int x)
+        {
+            int invers = 0;
+            while(x > 0)
+            {
+                invers = invers * 10 + x % 10;
+                x /= 10;
+            }
+            return invers;
         }
 
         public static void Problema12()
         {
-            
+            Console.WriteLine("Cate grupuri de numere consecutive diferite de zero sunt intr-o secventa de n numere. Considerati fiecare astfel de grup ca fiind un cuvant, zero fiind delimitator de cuvinte. De ex. pentru secventa 1, 2, 0, 3, 4, 5, 0, 0, 6, 7, 0, 0 raspunsul este 3.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
+            int a = int.Parse(Console.ReadLine());
+            bool cuvant = false;
+            int ans = 0;
+            for (int i = 0; i < n-1; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                if (b == 0)
+                {
+                    cuvant = false;
+                    continue;
+                }
+                if (cuvant == false && a > 0 && b > 0)
+                {
+                    ans++;
+                    cuvant = true;
+                }
+            }
+            Console.WriteLine($"In secventa sunt {ans} grupuri de nr consec diferite de 0");
         }
 
         public static void Problema13()
         {
-            
+            Console.WriteLine("O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul). Determinati daca o secventa de n numere este o secventa crescatoare rotita.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
         }
 
         public static void Problema14()
