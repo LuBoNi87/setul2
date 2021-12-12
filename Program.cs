@@ -372,12 +372,33 @@ namespace setul1
             else    
                 Console.WriteLine("Secventa nu este bitonica");
         }
+        // 1,2,2,3,5,4,4,3
 
         public static void Problema16()
         {
             Console.WriteLine("O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata intr-o secventa bitonica prin rotiri succesive (rotire = primul element devine ultimul). Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita.");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
+            int a = int.Parse(Console.ReadLine());
+            bool crescatoare = true;
+            bool descrescatoare1 = true;
+            bool descrescatoare2 = true;
+            int primulnr = a;
+            for (int i = 0; i < n - 1; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                if (b > a && descrescatoare1 == true)
+                    descrescatoare1 = false;
+                if (b < a && descrescatoare1 == false && crescatoare == true)
+                    crescatoare = false;
+                if (b > a && descrescatoare1 == false && crescatoare == false)
+                    descrescatoare2 = false;
+                a = b;
+            }
+            if (descrescatoare2 == true && primulnr < a)
+                Console.WriteLine("Secventa este bitonica");
+            else
+                Console.WriteLine("Secventa nu este bitonica");
         }
 
         public static void Problema17()
