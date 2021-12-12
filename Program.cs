@@ -166,11 +166,25 @@ namespace setul1
             Console.WriteLine("Se da o secventa de n numere. Sa se determine cea mai mare si cea mai mica valoare din secventa.");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
+            int min = int.MaxValue;
+            int max = int.MinValue;
+            for (int i = 0; i < n - 1; i++)
+            {
+                int a = int.Parse(Console.ReadLine());
+                if (a < min)
+                    min = a;
+                if (a > max)
+                    max = a;
+            }
+            Console.WriteLine($"Numarul maxim este {max}, iar numarul minim este {min}");
         }
 
         public static void Problema8()
         {
-            
+            Console.WriteLine("Determianti al n-lea numar din sirul lui Fibonacci. Sirul lui Fibonacci se construieste astfel: f1 = 0, f2 = 1, f_n = f_(n-1) + f(n-2). Exemplu: 0, 1, 1, 2, 3, 5, 8 ...");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
+
         }
 
         public static void Problema9()
