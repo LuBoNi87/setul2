@@ -324,7 +324,7 @@ namespace setul1
 
         public static void Problema14()
         {
-            Console.WriteLine("O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul). Determinati daca o secventa de n numere este o secventa crescatoare rotita.");
+            Console.WriteLine("O <secventa monotona rotita> este o secventa de numere monotona sau poate fi transformata intr-o secventa montona prin rotiri succesive. Determinati daca o secventa de n numere este o secventa monotona rotita. ");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
             int a = int.Parse(Console.ReadLine());
@@ -352,35 +352,32 @@ namespace setul1
 
         public static void Problema15()
         {
-            Console.WriteLine("O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul). Determinati daca o secventa de n numere este o secventa crescatoare rotita.");
+            Console.WriteLine("O secventa bitonica este o secventa de numere care incepe monoton crescator si continua monoton descrecator. De ex. 1,2,2,3,5,4,4,3 este o secventa bitonica. Se da o secventa de n numere. Sa se determine daca este bitonica.");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
             int a = int.Parse(Console.ReadLine());
-            int crescatoare = 2;
-            int descrescatoare = 2;
+            bool crescatoare = true;
+            bool descrescatoare = true;
             for (int i = 0; i < n - 1; i++)
             {
                 int b = int.Parse(Console.ReadLine());
-                if (b < a)
-                    crescatoare--;
-                if (b > a)
-                    descrescatoare--;
-                if (a == b)
-                {
-                    crescatoare = 0;
-                    descrescatoare = 0;
-                    break;
-                }
+                if (b < a && crescatoare == true)
+                    crescatoare = false;
+                if (b > a && crescatoare == false)
+                    descrescatoare = false;
                 a = b;
             }
-            if (crescatoare >= 1 || descrescatoare >= 1)
-                Console.WriteLine("Secventa este monotona rotita");
-            else Console.WriteLine("Secventa nu este monotona rotita");
+            if (descrescatoare == true)
+                Console.WriteLine("Secventa este bitonica");
+            else    
+                Console.WriteLine("Secventa nu este bitonica");
         }
 
         public static void Problema16()
         {
-            
+            Console.WriteLine("O <secventa bitonica rotita> este o secventa bitonica sau una ca poate fi transformata intr-o secventa bitonica prin rotiri succesive (rotire = primul element devine ultimul). Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
         }
 
         public static void Problema17()
