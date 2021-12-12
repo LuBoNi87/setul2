@@ -235,6 +235,22 @@ namespace setul1
             Console.WriteLine("Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa.");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
+            int a = int.Parse(Console.ReadLine());
+            int length = 0, maxlength = 0;
+            for (int i = 0; i < n-1; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                if (a == b)
+                {
+                    length++;
+                    if (length > maxlength)
+                        maxlength = length;
+                }
+                else
+                    length = 1;
+                a = b;
+            }
+            Console.WriteLine($"Numarul maxim de numere consecutive egale din secventa este {maxlength}");
         }
 
         public static void Problema11()
