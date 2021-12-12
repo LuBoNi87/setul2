@@ -308,11 +308,25 @@ namespace setul1
             Console.WriteLine("O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul). Determinati daca o secventa de n numere este o secventa crescatoare rotita.");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
+            int a = int.Parse(Console.ReadLine());
+            int crescatoare = 2;
+            for (int i = 0; i < n-1; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                if (b < a)
+                    crescatoare--;
+                a = b;
+            }
+            if(crescatoare>=1)
+                Console.WriteLine("Secventa este crescatoare rotita");
+            else Console.WriteLine("Secventa nu este crescatoare rotita");
         }
 
         public static void Problema14()
         {
-            
+            Console.WriteLine("O <secventa crescatoare rotita> este o secventa de numere care este in ordine crescatoare sau poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive (rotire cu o pozitie spre stanga = toate elementele se muta cu o pozitie spre stanga si primul element devine ultimul). Determinati daca o secventa de n numere este o secventa crescatoare rotita.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
         }
 
         public static void Problema15()
