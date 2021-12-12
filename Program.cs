@@ -205,12 +205,36 @@ namespace setul1
             Console.WriteLine("Sa se determine daca o secventa de n numere este monotona. Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare.");
             Console.Write("n:");
             int n = int.Parse(Console.ReadLine());
-
+            bool asc = false;
+            bool desc = false;
+            bool monoton = true;
+            int a = int.Parse(Console.ReadLine());
+            for (int i = 0; i < n-1; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                if (asc == false && desc == false)
+                {
+                    if (a < b)
+                        asc = true;
+                    else if (a > b)
+                        desc = true;
+                }
+                else if (asc == true && a >= b)
+                    monoton = false;
+                else if (desc == true && a <= b)
+                    monoton = false;
+            }
+            if(monoton)
+            Console.WriteLine("Secventa este monotona");
+            else
+            Console.WriteLine("Secventa nu este monotona");
         }
 
         public static void Problema10()
         {
-            
+            Console.WriteLine("Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa.");
+            Console.Write("n:");
+            int n = int.Parse(Console.ReadLine());
         }
 
         public static void Problema11()
