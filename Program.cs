@@ -262,12 +262,12 @@ namespace setul1
             for (int i = 0; i < n; i++)
             {
                 int x = int.Parse(Console.ReadLine());
-                sum += invers(x);
+                sum += Invers(x);
             }
             Console.WriteLine($"Suma inverselor este {sum}");
         }
 
-        private static int invers(int x)
+        private static int Invers(int x)
         {
             int invers = 0;
             while(x > 0)
@@ -372,7 +372,6 @@ namespace setul1
             else    
                 Console.WriteLine("Secventa nu este bitonica");
         }
-        // 1,2,2,3,5,4,4,3
 
         public static void Problema16()
         {
@@ -403,7 +402,34 @@ namespace setul1
 
         public static void Problema17()
         {
-            
+            Console.WriteLine("Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. Determinati daca secventa reprezinta o secventa de paranteze corecta si,  daca este, determinati nivelul maxim de incuibare a parantezelor. De exemplu 0 1 0 0 1 0 1 1 este corecta si are nivelul maxim de incuibare 2 pe cand 0 0 1 1 1 0 este incorecta.");
+            Console.Write("n:");
+            string n = Console.ReadLine();
+            int count0 = 0;int count1 = 0;
+            int length = 0;int maxLength = 0;
+            for (int i = 0; i < n.Length; i++)
+            {
+                if (n[i] == '0')
+                {
+                    count0++;
+                }
+                else
+                {
+                    count1++;
+                    if (count0 > count1)
+                        length++;
+                    if (length > maxLength)
+                        maxLength = length;
+                }
+                    if (length > maxLength)
+                    maxLength = length;
+                if (count0 == count1)
+                    length = 0;
+            }
+            if(count0 == count1 && n[n.Length-1]=='1')
+                Console.WriteLine($"este corecta si are incubarea maxima {maxLength}");
+            else    
+                Console.WriteLine("nu este corecta");
         }
-    }
+    }//()(()())
 }
